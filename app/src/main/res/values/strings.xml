@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">ShoppingApp</string>
+
+    <string name="book_price">Price</string>
+    <string name="book_description">Description</string>
+    <string name="add_to_cart">Add to cart</string>
+    <string name="buy_now">Buy Now</string>
+    <string name="title_activity_details">Details</string>
+    <string name="title_activity_cart">Cart</string>
+    <string name="proceed_to_checkout">Proceed To Checkout</string>
+    <string name="title_activity_checkout">Checkout</string>
+
+    <string name="shippingto"><b>Shipping To</b> %s</string>
+    <string name="items">items :</string>
+    <string name="shipping">Shipping :</string>
+    <string name="estimated_tax">Estimated Tax :</string>
+    <string name="order_total">Order Total :</string>
+    <string name="confirm_order">Order Confirmed</string>
+    <string name="payment_method">Payment Method : </string>
+    <string name="return_to_dashboard">Return To Dashboard</string>
+    <string name="cart_empty">Cart is Empty</string>
+</resources>
