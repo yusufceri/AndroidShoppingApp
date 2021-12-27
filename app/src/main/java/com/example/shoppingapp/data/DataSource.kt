@@ -4,7 +4,6 @@ import com.example.shoppingapp.data.model.Book
 import com.example.shoppingapp.data.model.CartItems
 import com.example.shoppingapp.data.model.CheckoutData
 import com.example.shoppingapp.data.model.OrderConfirmation
-import kotlinx.coroutines.delay
 
 class DataSource {
     suspend fun getAllBooksFromApi(): Result<List<Book>> {
@@ -132,5 +131,4 @@ class DataSource {
             return true
         }
     }
-
 }
