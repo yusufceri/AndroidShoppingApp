@@ -13,7 +13,6 @@ import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.runtime.*
 import androidx.compose.runtime.livedata.observeAsState
-import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
@@ -26,14 +25,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.ViewModel
 import com.example.shoppingapp.R
-import com.example.shoppingapp.checkout.CheckoutActivity
 import com.example.shoppingapp.data.model.Book
 import com.example.shoppingapp.details.detailsctatypes.DetailsCTATypes
-import com.example.shoppingapp.home.HomeViewModel
-import com.example.shoppingapp.home.ScreenContent
-import com.example.shoppingapp.home.dashboardctatypes.Dashboardctatypes
 import com.example.shoppingapp.utils.ShowError
 import com.example.shoppingapp.utils.ShowProgress
 import com.example.shoppingapp.vms.ResultStatus
@@ -246,9 +240,7 @@ fun ProfileProperty(label: String, value: String) {
 @Composable
 fun ProfileContent(book: Book, containerHeight: Dp) {
     Column {
-//            Title(book)
         ProfileProperty(stringResource(R.string.book_price), book.price.toString())
         ProfileProperty(stringResource(R.string.book_description), book.description ?: "")
-        //ProfileProperty(stringResource(R.string.personality), puppy.description)
     }
 }
