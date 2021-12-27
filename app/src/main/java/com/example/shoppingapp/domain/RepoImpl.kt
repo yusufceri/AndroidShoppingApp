@@ -1,9 +1,7 @@
 package com.example.shoppingapp.domain
 
-import android.util.Log
 import com.example.shoppingapp.data.DataSource
 import com.example.shoppingapp.data.model.Book
-import com.example.shoppingapp.data.model.CheckoutData
 import com.example.shoppingapp.data.model.OrderConfirmation
 import com.example.shoppingapp.vms.ResultStatus
 import kotlinx.coroutines.Dispatchers
@@ -16,7 +14,6 @@ class RepoImpl(private val dataSource: DataSource): Repo {
     }
 
     override suspend fun getBook(id: Int): ResultStatus<Book?> = withContext(Dispatchers.IO) {
-        Log.d("RepoImpl", "bookId = " + id)
         ResultStatus.Success(dataSource.getBookMockData(id))
     }
 
