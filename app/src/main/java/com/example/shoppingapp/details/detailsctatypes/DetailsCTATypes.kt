@@ -1,10 +1,9 @@
 package com.example.shoppingapp.details.detailsctatypes
 
-import com.example.shoppingapp.data.model.Book
-import com.example.shoppingapp.home.dashboardctatypes.Dashboardctatypes
+import com.example.shoppingapp.data.model.BookItem
 
 sealed class DetailsCTATypes {
-    class addToCart(val book: Book): DetailsCTATypes()
-    data class buyNow(val book: Book): DetailsCTATypes()
+    class addToCart(val book: BookItem): DetailsCTATypes()
+    data class buyNow(val book: BookItem): DetailsCTATypes()
     class navigateToCart(): DetailsCTATypes()
 }

@@ -1,46 +1,46 @@
 package com.example.shoppingapp.data
 
-import com.example.shoppingapp.data.model.Book
-import com.example.shoppingapp.data.model.CartItems
-import com.example.shoppingapp.data.model.CheckoutData
-import com.example.shoppingapp.data.model.OrderConfirmation
+import com.example.shoppingapp.baseservicecall.CallRequest
+import com.example.shoppingapp.baseservicecall.TaskManager
+import com.example.shoppingapp.data.mock.mockBookList
+import com.example.shoppingapp.data.model.*
+import com.example.shoppingapp.servicecall.GetBooks
+import com.example.shoppingapp.vms.ResultStatus
 
 class DataSource {
-    suspend fun getAllBooksFromApi(): Result<List<Book>> {
-        return Result.success(bookDataList)
+    suspend fun getBooksList(): ResultStatus<BookList> {
+        val callRequest = CallRequest(
+            GetBooks.IDENTIFIER,
+            CallRequest.TaskType.DATA
+        )
+        return TaskManager.getTask<BookList>(callRequest)?.let { bookList ->
+            ResultStatus.Success(bookList)
+        } ?: run {
+            ResultStatus.Failure((Exception("Book List empty")))
+        }
     }
 
-    val bookDataList = listOf(
-        Book(1,
-            "Example1",
-            "Author1",
-            12.0),
-        Book(2,
-            "Example2",
-            "Author2",
-            13.0),
-        Book(3,
-            "Example3",
-            "Author3",
-            14.0),
-        Book(4,
-            "Example4",
-            "Author4",
-            14.0),
-        Book(5,
-            "Example5",
-            "Author5",
-            16.0
-        ),
-        Book(6,
-            "Example6",
-            "Author6",
-            18.0),
-        Book(7,
-            "Example7",
-            "Author7",
-            19.0)
-    )
+    val bookDataList: List<Book>
+        get() {
+            return mockBookList //TODO
+        }
+
+    suspend fun getBookItem(id: String) : ResultStatus<BookItem> {
+        val callRequest = CallRequest(
+            GetBooks.IDENTIFIER,
+            CallRequest.TaskType.DATA
+        )
+        TaskManager.getTask<BookList>(callRequest)?.let { bookList ->
+            val book = bookList.items?.find {
+                it.id == id
+            }
+            if(book != null)
+                return ResultStatus.Success(book)
+            else
+                return ResultStatus.Failure(Exception("Book can't be found"))
+        }
+        return ResultStatus.Failure((Exception("Book List empty")))
+    }
 
     fun getBookMockData(id: Int): Book? {
         for(book in bookDataList) {
@@ -50,15 +50,15 @@ class DataSource {
         return null
     }
 
-    fun addToCart(book: Book): Boolean {
+    suspend fun addToCart(book: BookItem): Boolean {
         return CartData.putIntocart(book)
     }
 
-    fun removeFromCart(book: Book): Boolean {
+    fun removeFromCart(book: BookItem): Boolean {
         return CartData.removeFromCart(book)
     }
 
-    fun getCartData(): List<Book> {
+    fun getCartData(): List<BookItem> {
         return CartData.getCartItems()
     }
 
@@ -83,38 +83,42 @@ class DataSource {
         return CartData.clearCart()
     }
 
-    private fun getEstimatedTax(itemList: List<Book>): Double {
+    private fun getEstimatedTax(itemList: List<BookItem>): Double {
         var tax: Double = 0.0
         itemList.forEach { book ->
-            tax += book.price
+            book.saleInfo?.listPrice?.amount?.let {
+                tax += it
+            }
         }
         return tax / 5
     }
 
-    private fun getOrderTotal(itemList: List<Book>): Double {
+    private fun getOrderTotal(itemList: List<BookItem>): Double {
         var total: Double = 0.0
         itemList.forEach { book ->
-            total += book.price
+            book.saleInfo?.listPrice?.amount?.let {
+                total += it
+            }
         }
         return total
     }
 
     companion object CartData {
         var cartItems = CartItems()
-        fun putIntocart(book: Book): Boolean {
-            return cartItems.bookList?.let { bookList ->
-                bookList.add(book)
+        fun putIntocart(item: BookItem): Boolean {
+            return cartItems.itemList?.let { itemList ->
+                itemList.add(item)
             } ?: run {
-                cartItems = CartItems(mutableListOf(book))
+                cartItems = CartItems(mutableListOf(item))
                 true
             }
         }
 
-        fun removeFromCart(book: Book): Boolean {
-            return cartItems.bookList?.let { list ->
-                for(i in 0..list.size) {
-                    if(list[i].id == book.id)
-                        return list.remove(book)
+        fun removeFromCart(item: BookItem): Boolean {
+            return cartItems.itemList?.let { itemList ->
+                for(i in 0 until itemList.size-1) {
+                    if(itemList[i]?.id == item.id)
+                        return itemList.remove(itemList[i])
                 }
                 false
             } ?: run {
@@ -122,12 +126,12 @@ class DataSource {
             }
         }
 
-        fun getCartItems(): List<Book> {
-            return cartItems.bookList ?: listOf()
+        fun getCartItems(): List<BookItem> {
+            return cartItems.itemList ?: listOf()
         }
 
         fun clearCart(): Boolean {
-            cartItems.bookList?.clear()
+            cartItems.itemList?.clear()
             return true
         }
     }

@@ -1,30 +1,26 @@
 package com.example.shoppingapp.domain
 
-import android.util.Log
 import com.example.shoppingapp.data.DataSource
-import com.example.shoppingapp.data.model.Book
-import com.example.shoppingapp.data.model.CheckoutData
-import com.example.shoppingapp.data.model.OrderConfirmation
+import com.example.shoppingapp.data.model.*
 import com.example.shoppingapp.vms.ResultStatus
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
 
 class RepoImpl(private val dataSource: DataSource): Repo {
-    override suspend fun getAllBooks(): ResultStatus<List<Book>> {
-        return ResultStatus.Success(dataSource.bookDataList)
+    override suspend fun getAllBooks(): ResultStatus<BookList>  = withContext(Dispatchers.IO) {
+        dataSource.getBooksList()
     }
 
-    override suspend fun getBook(id: Int): ResultStatus<Book?> = withContext(Dispatchers.IO) {
-        Log.d("RepoImpl", "bookId = " + id)
-        ResultStatus.Success(dataSource.getBookMockData(id))
+    override suspend fun getBook(id: String): ResultStatus<BookItem?> = withContext(Dispatchers.IO) {
+        dataSource.getBookItem(id)
     }
 
-    override suspend fun addToCart(book: Book): ResultStatus<Boolean> {
-        return ResultStatus.Success(dataSource.addToCart(book))
+    override suspend fun addToCart(book: BookItem): ResultStatus<Boolean> = withContext(Dispatchers.IO) {
+        ResultStatus.Success(dataSource.addToCart(book))
     }
 
-    override suspend fun removeFromCart(book: Book): ResultStatus<Boolean> {
+    override suspend fun removeFromCart(book: BookItem): ResultStatus<Boolean> {
         return ResultStatus.Success(dataSource.removeFromCart(book))
     }
 

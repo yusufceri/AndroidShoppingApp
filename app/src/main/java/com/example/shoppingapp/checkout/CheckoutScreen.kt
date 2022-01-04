@@ -226,8 +226,8 @@ fun CheckoutScreenContent(checkoutData: CheckoutData, viewModel: CheckoutViewMod
                 .fillMaxWidth()) {
                 Text(
                     modifier = Modifier.padding(top = 8.dp),
-                    text = checkoutData.itemList?.let { list ->
-                            list.sumOf {it.price}.toString()
+                    text = checkoutData.itemList?.let { itemList ->
+                        itemList.sumOf {it.saleInfo?.listPrice?.amount ?: 0.0}.toString()
                     } ?: run {
                              "0"
                     },

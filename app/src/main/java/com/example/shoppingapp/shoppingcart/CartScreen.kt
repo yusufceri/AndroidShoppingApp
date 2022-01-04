@@ -21,6 +21,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
@@ -30,12 +31,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.shoppingapp.R
+import com.example.shoppingapp.app.SPApplication
 import com.example.shoppingapp.checkout.CheckoutActivity
 import com.example.shoppingapp.data.model.Book
+import com.example.shoppingapp.data.model.BookItem
 import com.example.shoppingapp.home.BookListCardItem
 import com.example.shoppingapp.home.dashboardctatypes.Dashboardctatypes
-import com.example.shoppingapp.utils.ShowError
-import com.example.shoppingapp.utils.ShowProgress
+import com.example.shoppingapp.utils.*
 import com.example.shoppingapp.vms.ResultStatus
 
 @Composable
@@ -108,10 +110,10 @@ fun CartContent(
     when (cartResult) {
         is ResultStatus.Loading -> ShowProgress()
         is ResultStatus.Success -> {
-           if((cartResult as ResultStatus.Success<List<Book>>).data != null &&
-               (cartResult as ResultStatus.Success<List<Book>>).data.size > 0) {
+           if((cartResult as ResultStatus.Success<List<BookItem>>).data != null &&
+               (cartResult as ResultStatus.Success<List<BookItem>>).data.size > 0) {
                cartScreen(
-                   bookList = (cartResult as ResultStatus.Success<List<Book>>).data,
+                   bookList = (cartResult as ResultStatus.Success<List<BookItem>>).data,
                    onNavigateCartCTA = onNavigateCartCTA
                )
            } else {
@@ -165,13 +167,13 @@ fun emptyCartScreen(
 
 @Composable
 fun cartScreen(
-    bookList: List<Book>,
+    bookList: List<BookItem>,
     onNavigateCartCTA: (CartCTATypes) -> Unit
 ) {
     Row {
             Column(
                 modifier = Modifier
-                    .padding(8.dp)
+                    .padding(12.dp)
                     .fillMaxWidth()
                     .wrapContentHeight()
                     .align(Alignment.CenterVertically),
@@ -179,17 +181,16 @@ fun cartScreen(
                 Button(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .background(color = Color.Yellow)
                         .border(
                             width = 0.5.dp,
                             color = Color.Gray,
-                            shape = RoundedCornerShape(5.dp)
+                            shape = RoundedCornerShape(8.dp)
                         ),
                     onClick = {
                         onNavigateCartCTA(CartCTATypes.ProceedToCheckout())
                     },
                     colors = ButtonDefaults.textButtonColors(
-                        backgroundColor = Color.White
+                        backgroundColor = Color.Yellow
                     )
                 ) {
                     Text(stringResource(id = R.string.proceed_to_checkout), color = Color.Black)
@@ -197,7 +198,6 @@ fun cartScreen(
 
                     LazyColumn(
                         modifier = Modifier.offset(y = 8.dp)
-//                        contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp)
                     ) {
                         items(
                             items = bookList,
@@ -211,7 +211,7 @@ fun cartScreen(
 
 @Composable
 fun CartListCardItem(
-    book: Book,
+    book: BookItem,
     onNavigateCartCTA: (CartCTATypes) -> Unit
 ) {
     Card(
@@ -238,7 +238,7 @@ fun CartListCardItem(
 
 @Composable
 fun BookListRowItem(
-    book: Book
+    bookItem: BookItem
 ) {
     Row {
         //TODO change drawable icon
@@ -247,15 +247,20 @@ fun BookListRowItem(
                 .wrapContentSize()
                 .align(Alignment.CenterVertically),
         ) {
-            Image(
-                painter = painterResource(id = R.drawable.ic_launcher_background),
-                contentDescription = null,
-                contentScale = ContentScale.Crop,
-                modifier = Modifier
-                    .padding(8.dp)
-                    .size(width = 48.dp, height = 72.dp)
-                    .clip(RoundedCornerShape(corner = CornerSize(3.dp)))
-            )
+            bookItem.volumeInfo?.imageLinks?.smallThumbnail?.let { imageUrl ->
+                val image = loadImage(url = imageUrl, defaultImage = DEFAULT_IMAGE).value
+                image?.let { img ->
+                    Image(
+                        bitmap = img.asImageBitmap(),
+                        contentDescription = null,
+                        contentScale = ContentScale.Crop,
+                        modifier = Modifier
+                            .padding(8.dp)
+                            .size(width = 24.dp, height = 36.dp)
+                            .clip(RoundedCornerShape(corner = CornerSize(3.dp)))
+                    )
+                }
+            }
         }
         Column (
             modifier = Modifier
@@ -264,19 +269,20 @@ fun BookListRowItem(
                 .align(Alignment.CenterVertically)
         ) {
             Text(
-                text = book.title,
-                style = MaterialTheme.typography.caption
+                text = bookItem.volumeInfo?.title ?: "",
+                style = MaterialTheme.typography.caption,
+                fontSize = 11.sp
             )
             Text(
-//                modifier = Modifier.offset(y = 8.dp),
-                text = book.author,
-                style = MaterialTheme.typography.caption
+                text = bookItem.volumeInfo?.authors?.get(0) ?: "",
+                style = MaterialTheme.typography.caption,
+                fontSize = 10.sp
             )
             Text(
-                modifier = Modifier.offset(y = 10.dp),
-                text = book.price.toString(),
+                modifier = Modifier.offset(y = 3.dp),
+                text = getPrice(bookItem.saleInfo?.listPrice?.currencyCode, bookItem.saleInfo?.listPrice?.amount.toString()),
                 style = MaterialTheme.typography.body2,
-                fontSize = 16.sp,
+                fontSize = 11.sp,
                 fontWeight = FontWeight.Bold
             )
         }

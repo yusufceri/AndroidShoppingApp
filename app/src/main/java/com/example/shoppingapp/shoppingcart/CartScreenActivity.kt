@@ -9,7 +9,7 @@ import androidx.activity.viewModels
 import com.example.shoppingapp.checkout.CheckoutActivity
 import com.example.shoppingapp.data.DataSource
 import com.example.shoppingapp.domain.RepoImpl
-import com.example.shoppingapp.home.MainActivity
+import com.example.shoppingapp.home.DashboardActivity
 import com.example.shoppingapp.ui.theme.ShoppingAppTheme
 
 class CartScreenActivity: ComponentActivity() {
@@ -36,7 +36,7 @@ class CartScreenActivity: ComponentActivity() {
                 startActivity(CartScreenActivity.newIntent(this))
             }
             is CartCTATypes.navigatetoDashboard -> {
-                startActivity(MainActivity.newIntent(this))
+                startActivity(DashboardActivity.newIntent(this))
             }
         }
     }
