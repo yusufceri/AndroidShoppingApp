@@ -1,14 +1,14 @@
 package com.example.shoppingapp.shoppingcart
 
 import androidx.lifecycle.*
-import com.example.shoppingapp.data.model.Book
+import com.example.shoppingapp.data.model.BookItem
 import com.example.shoppingapp.domain.Repo
 import com.example.shoppingapp.vms.ResultStatus
 
 class CartViewModel(private val repo: Repo) : ViewModel() {
-    private var _getCartContentLiveData = MutableLiveData<Book>()
+    private var _getCartContentLiveData = MutableLiveData<BookItem>()
     val getCartContentLiveData: LiveData<ResultStatus<Any>> = liveData {
-            emit(ResultStatus.Loading<List<Book>>())
+            emit(ResultStatus.Loading<List<BookItem>>())
             try {
                 emit(repo.getCart())
             } catch (e: Exception) {

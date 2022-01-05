@@ -1,0 +1,908 @@
+{
+  "kind": "books#volumes",
+  "totalItems": 11,
+  "items": [
+    {
+      "kind": "books#volume",
+      "id": "hbZ0Yfz-NG8C",
+      "etag": "S36i+DRCZQQ",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/hbZ0Yfz-NG8C",
+      "volumeInfo": {
+        "title": "The Da Vinci Code",
+        "authors": [
+          "Dan Brown"
+        ],
+        "publisher": "Anchor Books",
+        "publishedDate": "2006",
+        "description": "Harvard symbologist Robert Langdon and French cryptologist Sophie Neveu work to solve the murder of an elderly curator of the Louvre, a case which leads to clues hidden in the works of Da Vinci and a centuries-old secret society.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9780307277671"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "0307277674"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 480,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "averageRating": 3,
+        "ratingsCount": 3489,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.4.1.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=hbZ0Yfz-NG8C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=hbZ0Yfz-NG8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=hbZ0Yfz-NG8C&printsec=frontcover&dq=Da+Vinci+Code,The&hl=&cd=1&source=gbs_api",
+        "infoLink": "http://books.google.com/books?id=hbZ0Yfz-NG8C&dq=Da+Vinci+Code,The&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/The_Da_Vinci_Code.html?hl=&id=hbZ0Yfz-NG8C"
+      },
+      "saleInfo": {
+        "country": "US",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false,
+        "listPrice": {
+          "amount": 8.99,
+          "currencyCode": "USD"
+        }
+      },
+      "accessInfo": {
+        "country": "US",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=hbZ0Yfz-NG8C&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Harvard symbologist Robert Langdon and French cryptologist Sophie Neveu work to solve the murder of an elderly curator of the Louvre, a case which leads to clues hidden in the works of Da Vinci and a centuries-old secret society."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "N6DeDQAAQBAJ",
+      "etag": "NFv3zuherII",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/N6DeDQAAQBAJ",
+      "volumeInfo": {
+        "title": "Harry Potter and the Deathly Hallows",
+        "authors": [
+          "J. K. Rowling"
+        ],
+        "publisher": "Bloomsbury Publishing",
+        "publishedDate": "2015-08-13",
+        "description": "Harry Potter is preparing to leave the Dursleys and Privet Drive for the last time. But the future that awaits him is full of danger, not only for him, but for anyone close to him - and Harry has already lost so much. Only by destroying Voldemort's remaining Horcruxes can Harry free himself and overcome the Dark Lord's forces of evil. In this dramatic conclusion to the Harry Potter series, Harry must leave his most loyal friends behind, and in a final perilous journey find the strength and the will to face his terrifying destiny: a deadly confrontation that is his alone to fight. These adult editions with glorious jacket art by Andrew Davidson are now available in hardback for the first time.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781408865453"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1408865459"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 619,
+        "printType": "BOOK",
+        "categories": [
+          "Boarding schools"
+        ],
+        "averageRating": 4.5,
+        "ratingsCount": 3382,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.1.0.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=N6DeDQAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=N6DeDQAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=N6DeDQAAQBAJ&pg=PP1&dq=Harry+Potter+and+the+Deathly+Hallows&hl=&cd=1&source=gbs_api",
+        "infoLink": "http://books.google.com/books?id=N6DeDQAAQBAJ&dq=Harry+Potter+and+the+Deathly+Hallows&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Harry_Potter_and_the_Deathly_Hallows.html?hl=&id=N6DeDQAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "US",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false,
+        "listPrice": {
+          "amount": 11.99,
+          "currencyCode": "USD"
+        }
+      },
+      "accessInfo": {
+        "country": "US",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=N6DeDQAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "35rHBAAAQBAJ",
+      "etag": "eVfHDUySm7k",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/35rHBAAAQBAJ",
+      "volumeInfo": {
+        "title": "Harry Potter and the Philosopher's Stone",
+        "authors": [
+          "J. K. Rowling"
+        ],
+        "publisher": "Bloomsbury Publishing",
+        "publishedDate": "2014-01-09",
+        "description": "Celebrate 20 years of Harry Potter magic! Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly aunt and uncle. Then, on Harry's eleventh birthday, a great beetle-eyed giant of a man called Rubeus Hagrid bursts in with some astonishing news: Harry Potter is a wizard, and he has a place at Hogwarts School of Witchcraft and Wizardry. An incredible adventure is about to begin!These new editions of the classic and internationally bestselling, multi-award-winning series feature instantly pick-up-able new jackets by Jonny Duddle, with huge child appeal, to bring Harry Potter to the next generation of readers. It's time to PASS THE MAGIC ON ...",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781408855898"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1408855895"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 352,
+        "printType": "BOOK",
+        "categories": [
+          "Juvenile Fiction"
+        ],
+        "averageRating": 5,
+        "ratingsCount": 4,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.1.1.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=35rHBAAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=35rHBAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=35rHBAAAQBAJ&dq=Harry+Potter+and+the+Philosopher%27s+Stone&hl=&cd=1&source=gbs_api",
+        "infoLink": "http://books.google.com/books?id=35rHBAAAQBAJ&dq=Harry+Potter+and+the+Philosopher%27s+Stone&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Harry_Potter_and_the_Philosopher_s_Stone.html?hl=&id=35rHBAAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "US",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false,
+        "listPrice": {
+          "amount": 11.99,
+          "currencyCode": "USD"
+        }
+      },
+      "accessInfo": {
+        "country": "US",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=35rHBAAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "An incredible adventure is about to begin!These new editions of the classic and internationally bestselling, multi-award-winning series feature instantly pick-up-able new jackets by Jonny Duddle, with huge child appeal, to bring Harry ..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "JIwlvgAACAAJ",
+      "etag": "00fydrtiHMc",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/JIwlvgAACAAJ",
+      "volumeInfo": {
+        "title": "Harry Potter and the Order of the Phoenix",
+        "authors": [
+          "J. K. Rowling"
+        ],
+        "publishedDate": "2017-05-04",
+        "description": "'You are sharing the Dark Lord's thoughts and emotions. The Headmaster thinks it inadvisable for this to continue. He wishes me to teach you how to close your mind to the Dark Lord.' Dark times have come to Hogwarts. After the Dementors' attack on his cousin Dudley, Harry Potter knows that Voldemort will stop at nothing to find him. There are many who deny the Dark Lord's return, but Harry is not alone: a secret order gathers at Grimmauld Place to fight against the Dark forces. Harry must allow Professor Snape to teach him how to protect himself from Voldemort's savage assaults on his mind. But they are growing stronger by the day and Harry is running out of time … This gift edition hardback, presented in a beautiful foiled slipcase decorated with brand new line art by Jonny Duddle, will delight readers as they follow Harry and his friends through the fifth thrilling instalment of their adventures at Hogwarts School of Witchcraft and Wizardry.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "1408869152"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9781408869154"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 816,
+        "printType": "BOOK",
+        "categories": [
+          "Children's audiobooks"
+        ],
+        "averageRating": 4.5,
+        "ratingsCount": 11,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=JIwlvgAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=JIwlvgAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=JIwlvgAACAAJ&dq=Harry+Potter+and+the+Order+of+the+Phoenix&hl=&cd=1&source=gbs_api",
+        "infoLink": "http://books.google.com/books?id=JIwlvgAACAAJ&dq=Harry+Potter+and+the+Order+of+the+Phoenix&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Harry_Potter_and_the_Order_of_the_Phoeni.html?hl=&id=JIwlvgAACAAJ"
+      },
+      "saleInfo": {
+        "country": "US",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false,
+        "listPrice": {
+          "amount": 12.99,
+          "currencyCode": "USD"
+        }
+      },
+      "accessInfo": {
+        "country": "US",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=JIwlvgAACAAJ&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Celebrate 20 years of Harry Potter magic!"
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "f2IDxAEACAAJ",
+      "etag": "XarE5xdQiRs",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/f2IDxAEACAAJ",
+      "volumeInfo": {
+        "title": "Fifty Shades Trilogy",
+        "subtitle": "Book 1 - Fifty Shades of Grey",
+        "authors": [
+          "E. L. James"
+        ],
+        "publishedDate": "2011",
+        "description": "When Anastasia Steele, a young literature student, interviews wealthy young entrepreneur Christian Grey for her campus magazine, their initial meeting introduces Anastasia to an exciting new world that will change them both forever.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0345803485"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780345803481"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 514,
+        "printType": "BOOK",
+        "categories": [
+          "Businessmen"
+        ],
+        "averageRating": 4,
+        "ratingsCount": 120,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=f2IDxAEACAAJ&dq=Fifty+Shades+of+Grey&hl=&cd=1&source=gbs_api",
+        "infoLink": "http://books.google.com/books?id=f2IDxAEACAAJ&dq=Fifty+Shades+of+Grey&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Fifty_Shades_Trilogy.html?hl=&id=f2IDxAEACAAJ"
+      },
+      "saleInfo": {
+        "country": "US",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false,
+        "listPrice": {
+          "amount": 9.99,
+          "currencyCode": "USD"
+        }
+      },
+      "accessInfo": {
+        "country": "US",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=f2IDxAEACAAJ&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "When Anastasia Steele, a young literature student, interviews wealthy young entrepreneur Christian Grey for her campus magazine, their initial meeting introduces Anastasia to an exciting new world that will change them both forever."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "e3_6vQEACAAJ",
+      "etag": "K2UeygTUjgc",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/e3_6vQEACAAJ",
+      "volumeInfo": {
+        "title": "Harry Potter and the Goblet of Fire",
+        "authors": [
+          "J. K. Rowling"
+        ],
+        "publisher": "Arthur A. Levine Books",
+        "publishedDate": "2000",
+        "description": "Fourteen-year-old Harry Potter joins the Weasleys at the Quidditch World Cup, then enters his fourth year at Hogwarts Academy where he is mysteriously entered in an unusual contest that challenges his wizarding skills, friendships and character, amid signs that an old enemy is growing stronger.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "1484475526"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9781484475522"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 734,
+        "printType": "BOOK",
+        "categories": [
+          "England"
+        ],
+        "averageRating": 4.5,
+        "ratingsCount": 188,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=e3_6vQEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=e3_6vQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=e3_6vQEACAAJ&dq=Harry+Potter+and+the+Goblet+of+Fire&hl=&cd=1&source=gbs_api",
+        "infoLink": "http://books.google.com/books?id=e3_6vQEACAAJ&dq=Harry+Potter+and+the+Goblet+of+Fire&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Harry_Potter_and_the_Goblet_of_Fire.html?hl=&id=e3_6vQEACAAJ"
+      },
+      "saleInfo": {
+        "country": "US",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false,
+        "listPrice": {
+          "amount": 10.99,
+          "currencyCode": "USD"
+        }
+      },
+      "accessInfo": {
+        "country": "US",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=e3_6vQEACAAJ&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Harry Potter longs to escape his hateful relatives, the Dursleys, and live as a normal fourteen-year-old wizard, but what Harry does not yet realize is that he is not a normal wizard, and in his case, different can be deadly."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "yTm_C8TWpkcC",
+      "etag": "6e4VtvFqKs4",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/yTm_C8TWpkcC",
+      "volumeInfo": {
+        "title": "Angels & Demons",
+        "subtitle": "A Novel",
+        "authors": [
+          "Dan Brown"
+        ],
+        "publisher": "Simon and Schuster",
+        "publishedDate": "2006-05-23",
+        "description": "The murder of a world-famous physicist raises fears that the Illuminati are operating again after centuries of silence, and religion professor Robert Langdon is called in to assist with the case.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9780743493468"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "074349346X"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 480,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "averageRating": 3.5,
+        "ratingsCount": 384,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.3.0.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=yTm_C8TWpkcC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=yTm_C8TWpkcC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=yTm_C8TWpkcC&printsec=frontcover&dq=Angels+and+Demons&hl=&cd=1&source=gbs_api",
+        "infoLink": "http://books.google.com/books?id=yTm_C8TWpkcC&dq=Angels+and+Demons&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Angels_Demons.html?hl=&id=yTm_C8TWpkcC"
+      },
+      "saleInfo": {
+        "country": "US",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false,
+        "listPrice": {
+          "amount": 7.99,
+          "currencyCode": "USD"
+        }
+      },
+      "accessInfo": {
+        "country": "US",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=yTm_C8TWpkcC&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "The murder of a world-famous physicist raises fears that the Illuminati are operating again after centuries of silence, and religion professor Robert Langdon is called in to assist with the case."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "ZfjzX7M8zt0C",
+      "etag": "W4idk6RBWIc",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/ZfjzX7M8zt0C",
+      "volumeInfo": {
+        "title": "Twilight",
+        "authors": [
+          "Stephenie Meyer"
+        ],
+        "publisher": "Little, Brown Books for Young Readers",
+        "publishedDate": "2007-07-18",
+        "description": "With 160 million copies of the Twilight Saga sold worldwide, this addictive love story between a teenage girl and a vampire redefined romance for a generation. Here's the book that started it all. Isabella Swan's move to Forks, a small, perpetually rainy town in Washington, could have been the most boring move she ever made. But once she meets the mysterious and alluring Edward Cullen, Isabella's life takes a thrilling and terrifying turn. Up until now, Edward has managed to keep his vampire identity a secret in the small community he lives in, but now nobody is safe, especially Isabella, the person Edward holds most dear. The lovers find themselves balanced precariously on the point of a knife-between desire and danger. Deeply romantic and extraordinarily suspenseful, Twilightcaptures the struggle between defying our instincts and satisfying our desires. This is a love story with bite. \"People do not want to just read Meyer's books; they want to climb inside them and live there.\"--Time \"A literary phenomenon.\"--The New York Times",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9780316007443"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "0316007447"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": false
+        },
+        "pageCount": 544,
+        "printType": "BOOK",
+        "categories": [
+          "Young Adult Fiction"
+        ],
+        "averageRating": 4,
+        "ratingsCount": 2783,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "1.15.12.0.preview.2",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=ZfjzX7M8zt0C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=ZfjzX7M8zt0C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=ZfjzX7M8zt0C&printsec=frontcover&dq=Twilight&hl=&cd=1&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=ZfjzX7M8zt0C&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=ZfjzX7M8zt0C"
+      },
+      "saleInfo": {
+        "country": "US",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 10.99,
+          "currencyCode": "USD"
+        },
+        "retailPrice": {
+          "amount": 10.99,
+          "currencyCode": "USD"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=ZfjzX7M8zt0C&rdid=book-ZfjzX7M8zt0C&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 10990000,
+              "currencyCode": "USD"
+            },
+            "retailPrice": {
+              "amountInMicros": 10990000,
+              "currencyCode": "USD"
+            },
+            "giftable": true
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "US",
+        "viewability": "PARTIAL",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com/books/download/Twilight-sample-epub.acsm?id=ZfjzX7M8zt0C&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=ZfjzX7M8zt0C&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Deeply romantic and extraordinarily suspenseful, Twilight captures the struggle between defying our instincts and satisfying our desires. This is a love story with bite."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "MH48bnzN0LUC",
+      "etag": "SrdTntdooSc",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/MH48bnzN0LUC",
+      "volumeInfo": {
+        "title": "The Kite Runner",
+        "subtitle": "Rejacketed",
+        "authors": [
+          "Khaled Hosseini"
+        ],
+        "publisher": "A&C Black",
+        "publishedDate": "2011-09-05",
+        "description": "Over 21 million copies sold worldwide",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781408824856"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "140882485X"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 336,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "averageRating": 4,
+        "ratingsCount": 3475,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "0.2.0.0.preview.1",
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=MH48bnzN0LUC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=MH48bnzN0LUC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=MH48bnzN0LUC&printsec=frontcover&dq=Kite+Runner,The&hl=&cd=1&source=gbs_api",
+        "infoLink": "http://books.google.com/books?id=MH48bnzN0LUC&dq=Kite+Runner,The&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/The_Kite_Runner.html?hl=&id=MH48bnzN0LUC"
+      },
+      "saleInfo": {
+        "country": "US",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false,
+        "listPrice": {
+          "amount": 6.99,
+          "currencyCode": "USD"
+        }
+      },
+      "accessInfo": {
+        "country": "US",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com/books/download/The_Kite_Runner-sample-pdf.acsm?id=MH48bnzN0LUC&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=MH48bnzN0LUC&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Afghanistan, 1975: Twelve-year-old Amir is desperate to win the local kite-fighting tournament and his loyal friend Hassan promises to help him."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "GNnxzQEACAAJ",
+      "etag": "pfamEU2CCn8",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/GNnxzQEACAAJ",
+      "volumeInfo": {
+        "title": "The Fellowship of the Ring",
+        "subtitle": "Being the First Part of the Lord of the Rings",
+        "authors": [
+          "J. R. R. Tolkien"
+        ],
+        "publisher": "Mariner Books",
+        "publishedDate": "2003-09",
+        "description": "After discovering the true nature of the One Ring, Bilbo Baggins entrusts it to the care of his young cousin, Frodo, who is charged with bringing about its destruction and thus foiling the plans of the Dark Lord.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0618346252"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780618346257"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 398,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "averageRating": 4,
+        "ratingsCount": 2391,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=GNnxzQEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=GNnxzQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=GNnxzQEACAAJ&dq=Lord+of+the+Rings,The&hl=&cd=1&source=gbs_api",
+        "infoLink": "http://books.google.com/books?id=GNnxzQEACAAJ&dq=Lord+of+the+Rings,The&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/The_Fellowship_of_the_Ring.html?hl=&id=GNnxzQEACAAJ"
+      },
+      "saleInfo": {
+        "country": "US",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false,
+        "listPrice": {
+          "amount": 12.99,
+          "currencyCode": "USD"
+        }
+      },
+      "accessInfo": {
+        "country": "US",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=GNnxzQEACAAJ&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "After discovering the true nature of the One Ring, Bilbo Baggins entrusts it to the care of his young cousin, Frodo, who is charged with bringing about its destruction and thus foiling the plans of the Dark Lord."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "FzVjBgAAQBAJ",
+      "etag": "X8j/DGLbJYI",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/FzVjBgAAQBAJ",
+      "volumeInfo": {
+        "title": "The Alchemist",
+        "authors": [
+          "Paulo Coelho"
+        ],
+        "publisher": "HarperCollins",
+        "publishedDate": "2015-02-24",
+        "description": "A special 25th anniversary edition of the extraordinary international bestseller, including a new Foreword by Paulo Coelho. Combining magic, mysticism, wisdom and wonder into an inspiring tale of self-discovery, The Alchemist has become a modern classic, selling millions of copies around the world and transforming the lives of countless readers across generations. Paulo Coelho's masterpiece tells the mystical story of Santiago, an Andalusian shepherd boy who yearns to travel in search of a worldly treasure. His quest will lead him to riches far different—and far more satisfying—than he ever imagined. Santiago's journey teaches us about the essential wisdom of listening to our hearts, of recognizing opportunity and learning to read the omens strewn along life's path, and, most importantly, to follow our dreams.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9780062416216"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "0062416219"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 208,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "averageRating": 4.5,
+        "ratingsCount": 17,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "1.7.6.0.preview.3",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=FzVjBgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=FzVjBgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=FzVjBgAAQBAJ&pg=PP1&dq=Alchemist,The:A+Fable+About+Following+Your+Dream&hl=&cd=2&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=FzVjBgAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=FzVjBgAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "US",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 3.99,
+          "currencyCode": "USD"
+        },
+        "retailPrice": {
+          "amount": 3.99,
+          "currencyCode": "USD"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=FzVjBgAAQBAJ&rdid=book-FzVjBgAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 3990000,
+              "currencyCode": "USD"
+            },
+            "retailPrice": {
+              "amountInMicros": 3990000,
+              "currencyCode": "USD"
+            },
+            "giftable": true
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "US",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+        "epub": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com/books/download/The_Alchemist-sample-epub.acsm?id=FzVjBgAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com/books/download/The_Alchemist-sample-pdf.acsm?id=FzVjBgAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=FzVjBgAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "This story, dazzling in its powerful simplicity and inspiring wisdom, is about an Andalusian shepherd boy named Santiago who travels from his homeland in Spain to the Egyptian desert in search of a treasure buried in the Pyramids."
+      }
+    }
+  ]
+}

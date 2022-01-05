@@ -28,8 +28,8 @@ class DetailsActivity : SPABaseActivity() {
     private val viewModel by viewModels<DetailsViewModel> { DetailsViewModelFactory(RepoImpl(DataSource())) }
 //    lateinit var CTANavigation: (type: Int) -> Unit
 
-    private val bookId: Int by lazy {
-        intent?.getSerializableExtra(BOOK_DATA_ID) as? Int ?: -1
+    private val bookId: String by lazy {
+        intent?.getSerializableExtra(BOOK_DATA_ID) as? String ?: ""
     }
 
     private fun navigationCTA(detailsCTAType: DetailsCTATypes) {
@@ -93,14 +93,13 @@ class DetailsActivity : SPABaseActivity() {
 
     companion object {
         private const val BOOK_DATA_ID = "book_data_id"
-        fun newIntent(context: Context, bookId: Int) =
+        fun newIntent(context: Context, bookId: String) =
             Intent(context, DetailsActivity::class.java).apply {
                 putExtra(BOOK_DATA_ID, bookId)
             }
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         viewModel.getBookDetails(bookId)
 
         setContent {

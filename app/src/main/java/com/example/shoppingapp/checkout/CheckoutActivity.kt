@@ -11,7 +11,7 @@ import com.example.shoppingapp.base.SPABaseActivity
 import com.example.shoppingapp.checkout.checkoutctatypes.CheckoutCTATypes
 import com.example.shoppingapp.data.DataSource
 import com.example.shoppingapp.domain.RepoImpl
-import com.example.shoppingapp.home.MainActivity
+import com.example.shoppingapp.home.DashboardActivity
 import com.example.shoppingapp.ui.theme.ShoppingAppTheme
 
 class CheckoutActivity: SPABaseActivity() {
@@ -27,7 +27,7 @@ class CheckoutActivity: SPABaseActivity() {
                 viewModel.orderConfirmed()
             }
             is CheckoutCTATypes.navigateToDashboard -> {
-                startActivity(MainActivity.newIntent(this))
+                startActivity(DashboardActivity.newIntent(this))
             }
         }
     }

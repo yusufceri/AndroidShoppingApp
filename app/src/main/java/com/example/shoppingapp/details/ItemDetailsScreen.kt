@@ -1,41 +1,40 @@
 package com.example.shoppingapp.details
 
-import android.util.Log
-import androidx.compose.foundation.Image
+import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.runtime.*
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.shoppingapp.R
 import com.example.shoppingapp.data.model.Book
+import com.example.shoppingapp.data.model.BookItem
 import com.example.shoppingapp.details.detailsctatypes.DetailsCTATypes
-import com.example.shoppingapp.utils.ShowError
-import com.example.shoppingapp.utils.ShowProgress
+import com.example.shoppingapp.utils.*
 import com.example.shoppingapp.vms.ResultStatus
 
 
 @Composable
 fun ScreenWithTopBar(
-    id: Int,
+    id: String,
     viewModel: DetailsViewModel,
     onNavigateOnDetailsCTA: (DetailsCTATypes) -> Unit
 ) {
@@ -98,7 +97,7 @@ fun ScreenWithTopBar(
 
 @Composable
 fun BookDetailsContent(
-    id: Int,
+    id: String,
     viewModel: DetailsViewModel,
     onNavigateOnDetailsCTA: (DetailsCTATypes) -> Unit
 ) {
@@ -109,7 +108,7 @@ fun BookDetailsContent(
         is ResultStatus.Loading -> ShowProgress()
         is ResultStatus.Success -> {
             DetailsScreen(
-                book = (bookResult as ResultStatus.Success<Book>).data, viewModel,
+                book = (bookResult as ResultStatus.Success<BookItem>).data, viewModel,
                 onNavigateOnDetailsCTA)
         }
         is ResultStatus.Failure -> ShowError((bookResult as ResultStatus.Failure<Book>).exception)
@@ -117,7 +116,7 @@ fun BookDetailsContent(
 }
 
 @Composable
-fun DetailsScreen(book: Book, viewModel: DetailsViewModel, onNavigateOnDetailsCTA: (DetailsCTATypes) -> Unit) {
+fun DetailsScreen(book: BookItem, viewModel: DetailsViewModel, onNavigateOnDetailsCTA: (DetailsCTATypes) -> Unit) {
     Scaffold(
         content = {
             DetailsScreenContent(book,viewModel,onNavigateOnDetailsCTA)
@@ -126,7 +125,7 @@ fun DetailsScreen(book: Book, viewModel: DetailsViewModel, onNavigateOnDetailsCT
 }
 
 @Composable
-fun DetailsScreenContent(book: Book, viewModel: DetailsViewModel, onNavigateOnDetailsCTA: (DetailsCTATypes) -> Unit) {
+fun DetailsScreenContent(book: BookItem, viewModel: DetailsViewModel, onNavigateOnDetailsCTA: (DetailsCTATypes) -> Unit) {
     val srollState = rememberScrollState()
 
     val isItemAddedState: State<ResultStatus<Any?>?> = viewModel.addBookToCartLiveData.observeAsState(ResultStatus.Success<Boolean>(false))
@@ -146,21 +145,31 @@ fun DetailsScreenContent(book: Book, viewModel: DetailsViewModel, onNavigateOnDe
                         this@BoxWithConstraints.maxHeight
                     )
 
-                    if(isItemAdded) {
-                        GenericButton(
-                            text = stringResource(R.string.add_to_cart),
-                            DetailsCTATypes.addToCart(book),
-                            onNavigateOnDetailsCTA,
-                            isEnabled = false
-                        )
-                    } else {
-                        GenericButton(
-                            text = stringResource(R.string.add_to_cart),
-                            DetailsCTATypes.addToCart(book),
-                            onNavigateOnDetailsCTA
-                        )
+                    Row(modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(20.dp)
+                    ) {
+                        if (isItemAdded) {
+                            GenericButton(
+                                text = stringResource(R.string.add_to_cart),
+                                DetailsCTATypes.addToCart(book),
+                                onNavigateOnDetailsCTA,
+                                isEnabled = false
+                            )
+                        } else {
+                            GenericButton(
+                                text = stringResource(R.string.add_to_cart),
+                                DetailsCTATypes.addToCart(book),
+                                onNavigateOnDetailsCTA
+                            )
+                        }
+
+//                        GenericButton(
+//                            text = stringResource(R.string.buy_now),
+//                            DetailsCTATypes.buyNow(book),
+//                            onNavigateOnDetailsCTA
+//                        )
                     }
-                    GenericButton(text = stringResource(R.string.buy_now), DetailsCTATypes.buyNow(book), onNavigateOnDetailsCTA)
                     ProfileContent(book = book, containerHeight = this@BoxWithConstraints.maxHeight)
                 }
             }
@@ -175,45 +184,63 @@ fun GenericButton(
     onNavigateOnDetailsCTA: (DetailsCTATypes) -> Unit,
     isEnabled: Boolean = true
 ) {
-    Column(modifier = Modifier.padding(start = 16.dp, end = 16.dp, bottom = 16.dp)) {
+    Column(
+        modifier = Modifier.height(32.dp).padding(start=8.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+        ) {
         Button(
             onClick = {
                 onNavigateOnDetailsCTA(detailsCTATypes)
             },
             colors = ButtonDefaults.textButtonColors(
-                backgroundColor = Color.White
+                backgroundColor = Color.Yellow
             ),
             enabled = isEnabled
         ) {
-            Text(text, color = Color.Black)
+            Text(text, style = MaterialTheme.typography.body1, color = Color.Black, fontSize = 8.sp)
         }
     }
 }
 
 @Composable
 fun ProfileHeader(
-    book: Book,
+    bookItem: BookItem,
     containerHeight: Dp
 ) {
-    Image(
-        painter = painterResource(id = R.drawable.abc_vector_test),
-        contentDescription = null,
-        contentScale = ContentScale.Crop,
-        modifier = Modifier
-            .padding(8.dp)
-            .heightIn(max = containerHeight / 3)
-            .fillMaxWidth()
-            .clip(RoundedCornerShape(corner = CornerSize(16.dp)))
-    )
+    Box(
+        contentAlignment = Alignment.Center,
+        modifier = Modifier.fillMaxWidth()
+    ) {
+        bookItem.volumeInfo?.imageLinks?.thumbnail?.let { imageUrl ->
+            val image = loadImage(url = imageUrl, defaultImage = DEFAULT_IMAGE).value
+            image?.let { img ->
+                Image(
+                    bitmap = img.asImageBitmap(),
+                    contentDescription = null,
+                    contentScale = ContentScale.Crop,
+                    modifier = Modifier
+                        .padding(8.dp)
+                        .fillMaxHeight()
+                        .widthIn(max = containerHeight / 3)
+                        .clip(RoundedCornerShape(corner = CornerSize(8.dp)))
+                )
+            }
+        }
+    }
 }
 
 @Composable
-fun Title(book: Book) {
-    Column(modifier = Modifier.padding(start = 16.dp, end = 16.dp, bottom = 16.dp, top = 16.dp)) {
+fun Title(book: BookItem) {
+    Box(modifier = Modifier
+        .padding(start = 16.dp, end = 16.dp, bottom = 16.dp, top = 16.dp)
+        .fillMaxWidth(),
+        contentAlignment = Alignment.Center
+    ) {
         Text(
-            text = book.title,
+            text = book.volumeInfo?.title ?: "",
             style = MaterialTheme.typography.h5,
-            fontWeight = FontWeight.Bold
+            fontWeight = FontWeight.Bold,
+            fontSize = 12.sp
         )
     }
 }
@@ -224,12 +251,13 @@ fun ProfileProperty(label: String, value: String) {
         Divider(modifier = Modifier.padding(bottom = 4.dp))
         Text(
             text = label,
+            fontSize = 12.sp,
             modifier = Modifier.height(24.dp),
             style = MaterialTheme.typography.caption,
         )
         Text(
             text = value,
-            modifier = Modifier.height(24.dp),
+            fontSize = 10.sp,
             style = MaterialTheme.typography.body1,
             overflow = TextOverflow.Visible
         )
@@ -238,9 +266,9 @@ fun ProfileProperty(label: String, value: String) {
 
 
 @Composable
-fun ProfileContent(book: Book, containerHeight: Dp) {
+fun ProfileContent(book: BookItem, containerHeight: Dp) {
     Column {
-        ProfileProperty(stringResource(R.string.book_price), book.price.toString())
-        ProfileProperty(stringResource(R.string.book_description), book.description ?: "")
+        ProfileProperty(stringResource(R.string.book_price), getPrice(book.saleInfo?.listPrice?.currencyCode, book.saleInfo?.listPrice?.amount.toString() ?: ""))
+        ProfileProperty(stringResource(R.string.book_description), book.volumeInfo?.description ?: "")
     }
 }

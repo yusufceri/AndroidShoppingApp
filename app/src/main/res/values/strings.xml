@@ -15,8 +15,16 @@
     <string name="shipping">Shipping :</string>
     <string name="estimated_tax">Estimated Tax :</string>
     <string name="order_total">Order Total :</string>
-    <string name="confirm_order">Order Confirmed</string>
+    <string name="confirm_order">Confirm Order</string>
+    <string name="order_confirmed">Order Confirmed</string>
     <string name="payment_method">Payment Method : </string>
     <string name="return_to_dashboard">Return To Dashboard</string>
     <string name="cart_empty">Cart is Empty</string>
+    <string name="title_activity_login">LoginActivity</string>
+
+    <string name="signin">Sign In</string>
+    <string name="enteremail">Enter Email</string>
+    <string name="enterpassword">Enter Password</string>
+    <string name="login">Login</string>
+    <string name="required">Required</string>
 </resources>

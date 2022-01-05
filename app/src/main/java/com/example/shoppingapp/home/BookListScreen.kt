@@ -16,21 +16,24 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.shoppingapp.R
 import com.example.shoppingapp.data.model.Book
-import com.example.shoppingapp.utils.ShowError
-import com.example.shoppingapp.utils.ShowProgress
+import com.example.shoppingapp.data.model.BookItem
+import com.example.shoppingapp.data.model.BookList
 import com.example.shoppingapp.home.dashboardctatypes.Dashboardctatypes
+import com.example.shoppingapp.utils.*
 import com.example.shoppingapp.vms.ResultStatus
 
 @Composable
 fun ScreenWithTopBar(
-    viewModel: HomeViewModel,
+    viewModel: DashboardViewModel,
     onNavigateOnDashboardCTA: (Dashboardctatypes) -> Unit
 ) {
     val context = LocalContext.current
@@ -90,7 +93,7 @@ fun ScreenWithTopBar(
 
 @Composable
 fun ScreenContent(
-    viewModel: HomeViewModel,
+    viewModel: DashboardViewModel,
     onNavigateOnDashboardCTA: (Dashboardctatypes) -> Unit
 ) {
     MyApp(viewModel, onNavigateOnDashboardCTA)
@@ -98,7 +101,7 @@ fun ScreenContent(
 
 @Composable
 fun MyApp(
-    viewModel: HomeViewModel,
+    viewModel: DashboardViewModel,
     onNavigateOnDashboardCTA: (Dashboardctatypes) -> Unit
 ) {
     Scaffold(
@@ -110,7 +113,7 @@ fun MyApp(
 
 @Composable
 fun BookListContent(
-    viewModel: HomeViewModel,
+    viewModel: DashboardViewModel,
     onNavigateOnDashboardCTA: (Dashboardctatypes) -> Unit
 ) {
     val bookListResultState: State<ResultStatus<Any>?> = viewModel.fetchAllBooks.observeAsState<ResultStatus<Any>>()
@@ -120,20 +123,20 @@ fun BookListContent(
         is ResultStatus.Loading -> ShowProgress()
         is ResultStatus.Success -> {
             BookListScreen(
-                bookList = (bookListResult as ResultStatus.Success<List<Book>>).data,
+                bookList = (bookListResult as ResultStatus.Success<BookList>).data,
                 onNavigateOnDashboardCTA)
         }
-        is ResultStatus.Failure -> ShowError((bookListResult as ResultStatus.Failure<List<Book>>).exception)
+        is ResultStatus.Failure -> ShowError((bookListResult as ResultStatus.Failure<List<BookItem>>).exception)
     }
 }
 
 @Composable
-fun BookListScreen(bookList: List<Book>, onNavigateOnDashboardCTA: (Dashboardctatypes) -> Unit) {
+fun BookListScreen(bookList: BookList, onNavigateOnDashboardCTA: (Dashboardctatypes) -> Unit) {
     LazyColumn(
         contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp)
     ) {
         items(
-            items = bookList,
+            items = bookList.items as List<BookItem>,
             itemContent = {
                 BookListCardItem(book = it, onNavigateOnDashboardCTA)
             })
@@ -141,7 +144,7 @@ fun BookListScreen(bookList: List<Book>, onNavigateOnDashboardCTA: (Dashboardcta
 }
 
 @Composable
-fun BookListCardItem(book: Book, onNavigateOnDashboardCTA: (Dashboardctatypes) -> Unit) {
+fun BookListCardItem(book: BookItem, onNavigateOnDashboardCTA: (Dashboardctatypes) -> Unit) {
     Card(
         modifier = Modifier
             .padding(horizontal = 8.dp, vertical = 8.dp)
@@ -159,25 +162,34 @@ fun BookListCardItem(book: Book, onNavigateOnDashboardCTA: (Dashboardctatypes) -
 
 @Composable
 fun BookListRowItem(
-    book: Book
+    bookItem: BookItem
 ) {
     Row {
         //TODO change drawable icon
-        Image(painter = painterResource(id = R.drawable.ic_launcher_background), contentDescription = null,
-            contentScale = ContentScale.Crop,
-            modifier = Modifier.padding(8.dp)
-                .size(width = 48.dp, height = 72.dp)
-                .clip(RoundedCornerShape(corner = CornerSize(16.dp)))
-        )
+
+        bookItem.volumeInfo?.imageLinks?.smallThumbnail?.let { imageUrl ->
+            val image = loadImage(url = imageUrl, defaultImage = DEFAULT_IMAGE).value
+            image?.let { img->
+                Image(bitmap = img.asImageBitmap(), contentDescription = null,
+                    contentScale = ContentScale.Crop,
+                    modifier = Modifier
+                        .padding(12.dp)
+                        .size(width = 24.dp, height = 36.dp)
+                        //.clip(RoundedCornerShape(corner = CornerSize(16.dp)))
+                )
+            }
+        }
         Column (
             modifier = Modifier
                 .padding(8.dp)
                 .fillMaxWidth()
                 .align(Alignment.CenterVertically)
         ) {
-            Text(text = book.title, style = MaterialTheme.typography.h6)
-            Text(text = book.author, style = MaterialTheme.typography.caption)
-            Text(text = book.price.toString(), style = MaterialTheme.typography.body2)
+            Text(text = bookItem.volumeInfo?.title?:"", style = MaterialTheme.typography.h6, fontSize = 11.sp)
+            Text(text = bookItem.volumeInfo?.authors?.get(0)?:"", style = MaterialTheme.typography.caption, fontSize=10.sp)
+            Text(text = getPrice(bookItem.saleInfo?.listPrice?.currencyCode,
+                bookItem.saleInfo?.listPrice?.amount.toString() ?: ""
+            ), style = MaterialTheme.typography.body2, fontSize=12.sp)
         }
     }
 }
