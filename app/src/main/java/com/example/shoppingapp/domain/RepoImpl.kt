@@ -41,4 +41,8 @@ class RepoImpl(private val dataSource: DataSource): Repo {
     override suspend fun refreshCart(): ResultStatus<Boolean> = withContext(Dispatchers.IO) {
         ResultStatus.Success(dataSource.clearCart())
     }
+
+    override suspend fun loginApp(username: String, password: String): ResultStatus<Boolean> = withContext(Dispatchers.IO) {
+        dataSource.authenticateUser(username, password)
+    }
 }

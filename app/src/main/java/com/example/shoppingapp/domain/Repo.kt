@@ -12,4 +12,5 @@ interface Repo {
     suspend fun getCheckoutConfirmationData(): ResultStatus<CheckoutData>
     suspend fun orderConfirmed(): ResultStatus<OrderConfirmation>
     suspend fun refreshCart(): ResultStatus<Boolean>
+    suspend fun loginApp(email: String, password:String): ResultStatus<Boolean>
 }

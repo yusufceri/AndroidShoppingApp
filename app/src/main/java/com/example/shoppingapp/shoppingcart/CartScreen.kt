@@ -156,8 +156,8 @@ fun emptyCartScreen(
                     onNavigateCartCTA(CartCTATypes.navigatetoDashboard())
                 },
                 colors = ButtonDefaults.textButtonColors(
-                    backgroundColor = Color.White
-                )
+                    backgroundColor = Color.Yellow
+                ),
             ) {
                 Text(stringResource(id = R.string.return_to_dashboard), color = Color.Black)
             }

@@ -5,6 +5,8 @@ import com.example.shoppingapp.baseservicecall.TaskManager
 import com.example.shoppingapp.data.mock.mockBookList
 import com.example.shoppingapp.data.model.*
 import com.example.shoppingapp.servicecall.GetBooks
+import com.example.shoppingapp.servicecall.LoginUser
+import com.example.shoppingapp.utils.roundOffDecimal
 import com.example.shoppingapp.vms.ResultStatus
 
 class DataSource {
@@ -83,6 +85,31 @@ class DataSource {
         return CartData.clearCart()
     }
 
+    suspend fun authenticateUser(username: String, password: String): ResultStatus<Boolean> {
+        val callRequest = CallRequest(
+            LoginUser.IDENTIFIER,
+            CallRequest.TaskType.DATA
+        )
+        return TaskManager.getTask<LoginResponse>(callRequest)?.let { userData ->
+            if(confirmUserdata(username, password, userData))
+                return ResultStatus.Success(true)
+            return ResultStatus.Failure((Exception("Unsuccessful Login")))
+        } ?: run {
+            ResultStatus.Failure((Exception("Unsuccessful Login")))
+        }
+    }
+
+    /* Test purpose - User credential validation*/
+    private fun confirmUserdata(username: String, password: String, loginResponse: LoginResponse): Boolean {
+        if(
+            username.equals(loginResponse.userCredentials?.username) &&
+            password.equals(loginResponse.userCredentials?.password)
+        ) {
+            return true
+        }
+        return false
+    }
+
     private fun getEstimatedTax(itemList: List<BookItem>): Double {
         var tax: Double = 0.0
         itemList.forEach { book ->
@@ -90,7 +117,7 @@ class DataSource {
                 tax += it
             }
         }
-        return tax / 5
+        return (tax / 5).roundOffDecimal() ?: 0.0
     }
 
     private fun getOrderTotal(itemList: List<BookItem>): Double {
@@ -100,7 +127,7 @@ class DataSource {
                 total += it
             }
         }
-        return total
+        return (total+getEstimatedTax(itemList)).roundOffDecimal()?:0.0
     }
 
     companion object CartData {

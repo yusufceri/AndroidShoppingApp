@@ -14,7 +14,6 @@ class DetailsViewModel(private val repo: Repo): ViewModel() {
    private var _addBookToCartLiveData = MutableLiveData<BookItem>()
    val addBookToCartLiveData = _addBookToCartLiveData.switchMap {
        liveData {
-           emit(ResultStatus.Loading<List<BookItem>>())
            try {
                emit(repo.addToCart(it))
            } catch (e: Exception) {

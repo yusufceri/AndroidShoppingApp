@@ -25,7 +25,6 @@ import com.example.shoppingapp.R
 import com.example.shoppingapp.checkout.checkoutctatypes.CheckoutCTATypes
 import com.example.shoppingapp.data.model.Book
 import com.example.shoppingapp.data.model.CheckoutData
-import com.example.shoppingapp.shoppingcart.CartCTATypes
 import com.example.shoppingapp.utils.ShowError
 import com.example.shoppingapp.utils.ShowProgress
 import com.example.shoppingapp.vms.ResultStatus
@@ -111,7 +110,7 @@ fun confirmationDone(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = stringResource(id = R.string.confirm_order),
+                text = stringResource(id = R.string.order_confirmed),
                 style = MaterialTheme.typography.body1,
                 fontWeight = FontWeight.Normal,
                 modifier = Modifier.padding(top = 12.dp)
@@ -301,8 +300,8 @@ fun CheckoutScreenContent(checkoutData: CheckoutData, viewModel: CheckoutViewMod
                     onNavigateOnCheckoutCTA(CheckoutCTATypes.placeOrder())
                 },
                 colors = ButtonDefaults.textButtonColors(
-                    backgroundColor = Color.White
-                )
+                    backgroundColor = Color.Yellow
+                ),
             ) {
                 Text(stringResource(id = R.string.confirm_order), color = Color.Black)
             }
