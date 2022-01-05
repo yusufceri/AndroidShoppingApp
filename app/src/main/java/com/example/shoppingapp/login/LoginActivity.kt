@@ -13,7 +13,8 @@ import com.example.shoppingapp.data.DataSource
 import com.example.shoppingapp.domain.RepoImpl
 import com.example.shoppingapp.home.DashboardActivity
 import com.example.shoppingapp.login.loginctatypes.LoginCTATypes
-import com.example.shoppingapp.login.ui.theme.ShoppingAppTheme
+import com.example.shoppingapp.ui.theme.ShoppingAppTheme
+
 
 class LoginActivity : ComponentActivity() {
 
