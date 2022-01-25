@@ -36,7 +36,7 @@ class LoginActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             ShoppingAppTheme {
-                //A surface container using the 'background' color from the theme
+                //A surface container using the 'background' color from the theme.
                 Surface(color = MaterialTheme.colors.background) {
                     var isSplashscreenPresented by remember { mutableStateOf(false) }
                     val isSplashscreenPresentedState = viewModel.setSplashScreen().observeAsState<Boolean>()
