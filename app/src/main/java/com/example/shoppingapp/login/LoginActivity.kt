@@ -13,7 +13,8 @@ import com.example.shoppingapp.data.DataSource
 import com.example.shoppingapp.domain.RepoImpl
 import com.example.shoppingapp.home.DashboardActivity
 import com.example.shoppingapp.login.loginctatypes.LoginCTATypes
-import com.example.shoppingapp.login.ui.theme.ShoppingAppTheme
+import com.example.shoppingapp.ui.theme.ShoppingAppTheme
+
 
 class LoginActivity : ComponentActivity() {
 
@@ -35,7 +36,7 @@ class LoginActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             ShoppingAppTheme {
-                // A surface container using the 'background' color from the theme
+                //A surface container using the 'background' color from the theme.
                 Surface(color = MaterialTheme.colors.background) {
                     var isSplashscreenPresented by remember { mutableStateOf(false) }
                     val isSplashscreenPresentedState = viewModel.setSplashScreen().observeAsState<Boolean>()
